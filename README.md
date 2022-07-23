@@ -4,7 +4,7 @@ This project was made over the summer of 2022 to practice Java development.
 
 1. Import any image as a PNG into the input folder.
     - Smaller images work better, with 600x800 being a good size).
-    - If you don't want to edit the code, name the image "target.png".
+    - If you don't want to edit the code, name the image "target.png", otherwise, edit the first filepath in the main.java file.
 2. Run the program, with an expected runtime of around 5-8 hours.
     - Run the .jar file found in out/artifacts.
     - Terminate the program at any time once the correct level of detail is achieved.
