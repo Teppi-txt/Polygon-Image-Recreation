@@ -30,3 +30,9 @@ This project was made over the summer of 2022 to practice Java development.
 <img align="center" width="600" padding="50" src="https://user-images.githubusercontent.com/64125245/180592176-b18c432e-9e74-4d98-939a-faa052a62609.png">
 <h4 align="center"> 1500 Shapes, around 7 hours of runtime.</h4>
 </p>
+
+<h2>Animated GIFs using Blender Image Sequence Tool</h2>
+<p align="center">
+<img align="center" width="600" padding="50" src="https://user-images.githubusercontent.com/64125245/180593016-4fddb837-8f24-4798-a4f3-32bd172c00bd.gif">
+<h4 align="center">60 fps gif, with each 2nd frame removed to speed up runtime.</h4>
+</p>
