@@ -1,5 +1,5 @@
 # Polygon-Image-Recreation
-A java program used to recreate a target image using primitive polygons.
+A java program used to recreate a target image using simple polygons.
 This project was made over the summer of 2022 to practice Java development.
 
 1. Import any image as a PNG into the input folder.
