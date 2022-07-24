@@ -23,9 +23,10 @@ This project was made over the summer of 2022 to practice Java development.
 </p>
 
 <p align="center">
-<img align="center" width="600" padding="50" src="https://user-images.githubusercontent.com/64125245/180612816-364726c2-cb59-4c77-bcf7-7861ce09539b.png">
-<h4 align="center"> 1778 Shapes, around 7 hours of runtime.</h4>
+<img align="center" width="600" padding="50" src="https://user-images.githubusercontent.com/64125245/180630897-9ab33a6a-6105-4fb6-9a7f-339865606f41.png">
+<h4 align="center"> 3300 Shapes, around 12 hours of runtime.</h4>
 </p>
+
 
 
 <p align="center">
