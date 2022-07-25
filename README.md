@@ -82,3 +82,10 @@ To ensure the program only check the pixels it absolutely needs to, we can find 
 2. **To get the bounding box, all that needs to be done is to find the minimum and maximum x and y values within the coordinate list.**
 3. **A similar method is used for ellipses but instead of coordinates, it uses their radii.**
 
+### Benchmarking
+
+|Processing Time | No Optimisation | Bounding Box Optimisation |
+|---------| ------------- | ------------- |
+| 1 Shape (ms) | 15777 | 10465  |
+
+<h4 align="center">Approximately 150% runtime improvement</h4>
