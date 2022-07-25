@@ -51,12 +51,34 @@ This project was made over the summer of 2022 to practice Java development.
         - Done by drawing the shape on a completely blank image, then looping through it's pixels to isolate ones without a null value and getting the corresponding pixels in the target image.
     
 3. The program iterates through the `HashMap`, drawing each shape on a copy of the current image and comparing it to the target using mean squared difference to store the "fitness" value in `<Shape, Double>` pairs.
-    - Sorts the list based on the fitness value in descending order, and trims it to a set amount of best-scoring shapes.
+    - Sorts the list based on the fitness value in descending order, and removes all low-scoring shapes.
     
-4. For every remaining shape in the list, a new list is created containing the original shape, as well as 5 `mutated` copies of itself.
-    - `Mutations` shift properties of a shape by a value between 0 and a `mutateValue` variable, which can happen positively or negatively.
+4. For every remaining shape in the list, a new list is created containing the original shape and 10 `mutated` copies of itself.
+    - `Mutations` shift properties of shapes by a value between 0 and a `mutateValue` variable, which can happen positively or negatively.
     
 5. Repeat steps 3-5 for a set number of generations, before selecting the best scoring shape and drawing it onto the current image.
     - After a shape is drawn, the program jumps back to step 2. Outputting the current image as a frame also happens during this time.
     
 ## Optimizations
+
+### Bounding Box Detection
+In **Step 3**, when assigning shapes a color:
+>  ...drawing the shape on a completely blank image, then loop through it's pixels to isolate ones without a null value and getting the corresponding pixels in the target image.
+
+This process wastes a large amount of runtime, as looping through all the pixels in the image can waste unneccesary resources if the shape is significantly smaller than the dimensions of the image. 
+-   *This is seen much more prominently deep into a render, as when the current image resembles the target image more, the better shapes will be ones with small sizes, as they can provide more detail without messing up the progress already made.*
+
+To ensure the program only check the pixels it absolutely needs to, we can find the bounding box of each type of shape using basic trigonometry.
+<p align="center" margin="0" padding="0" >
+<img width="600"  margin="0" padding="0" alt="Screen Shot 2022-07-24 at 13 56 36" src="https://user-images.githubusercontent.com/64125245/180719180-a5cc90f0-de19-4561-9fd5-2b10b6ea8445.png">
+</p>
+
+#### Bounding Box Algorithm
+1. **Since shape coordinates are stored before a rotation is applied, the program must find the coordinate's location after a rotation:**
+    1. Store a list of vectors from the pivot (center) to each coordinate.
+    2. Calculate the length of this vector, as well it's angle from 0° by normalising it and using the unit circle.
+    3. Add the shapes rotation to the vector's angle, and convert it back into a normalised vector.
+    4. Multiply the normalised vector by the original length to scale it properly, the final position of which would be the coordinate after rotating.
+2. **To get the bounding box, all that needs to be done is to find the minimum and maximum x and y values within the coordinate list.**
+3. **A similar method is used for ellipses but instead of coordinates, it uses their radii.**
+
