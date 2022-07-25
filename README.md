@@ -42,7 +42,7 @@ This project was made over the summer of 2022 to practice Java development.
 
 <h2>Code Breakdown:</h2>
 
-1. Reads the target image from the input/target.png filepath and saves it as a BUfferedImage.
+1. Reads the target image from the input/target.png filepath and saves it as a BufferedImage.
     - It also creates a new, blank BufferedImage to use as the program's recreation.
 2. Generates a large list of shapes (Ellipses, Rects, or Polygons), each containing a set of random parameters.  
     - Each shape contains a rotation, whether to draw as filled or outlined.
