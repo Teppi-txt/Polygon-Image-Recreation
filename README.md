@@ -39,3 +39,20 @@ This project was made over the summer of 2022 to practice Java development.
 <img align="center" width="600" padding="50" src="https://user-images.githubusercontent.com/64125245/180593016-4fddb837-8f24-4798-a4f3-32bd172c00bd.gif">
 <h4 align="center">60 fps gif, with each 2nd frame removed to speed up runtime.</h4>
 </p>
+
+<h2>Code Breakdown:</h2>
+1. Reads the target image from the input/target.png filepath and saves it as a BUfferedImage.
+    - It also creates a new, blank BufferedImage to use as the program's recreation.
+2. Generates a large list of shapes (Ellipses, Rects, or POlygons), each containing a set of random parameters.  
+    - Each shape contains a rotation, whether to draw as filled or outlined.
+    - A color is also assigned by averaging the color of the pixels in the target image behind the shape.
+        - This is done by drawing the shape on a completely blank image, then looping through it's pixels to isolate ones without a null value, and then getting the corresponding pixels in the target image.
+3. The program iterates through the HashMap, drawing each shape on a copy of the current image and comparing it to the target (using mean-squared difference) to store the "fitness" value in <Shape, double> pairs.
+    - The program also sorts the list based on the fitness value in descending order.
+    - The list is trimmed to contain a few best scoring shapes.
+4. For every remaining shape in the list, a new list is created containing the original shape, as well as 5-10 mutated copies of itself.
+    - Mutations are when properties of a shape are shifted by a value between 0 and a mutateValue variable, which can happen positively or negatively.
+5. Repeat steps 3-5 for a set number of generations, before selecting the best scoring shape and drawing it onto the current image.
+    - After a shape is drawn, the program jumps back to step 2. Outputting the current image as a frame also happens during this time.
+    
+<h2>Code Breakdown:</h2> 
