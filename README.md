@@ -43,10 +43,10 @@ This project was made over the summer of 2022 to practice Java development.
 <h2>Code Breakdown:</h2>
 1. Reads the target image from the input/target.png filepath and saves it as a BUfferedImage.
     - It also creates a new, blank BufferedImage to use as the program's recreation.
-2. Generates a large list of shapes (Ellipses, Rects, or POlygons), each containing a set of random parameters.  
+2. Generates a large list of shapes (Ellipses, Rects, or Polygons), each containing a set of random parameters.  
     - Each shape contains a rotation, whether to draw as filled or outlined.
     - A color is also assigned by averaging the color of the pixels in the target image behind the shape.
-        - This is done by drawing the shape on a completely blank image, then looping through it's pixels to isolate ones without a null value, and then getting the corresponding pixels in the target image.
+    - This is done by drawing the shape on a completely blank image, then looping through it's pixels to isolate ones without a null value, and then getting the corresponding pixels in the target image.
 3. The program iterates through the HashMap, drawing each shape on a copy of the current image and comparing it to the target (using mean-squared difference) to store the "fitness" value in <Shape, double> pairs.
     - The program also sorts the list based on the fitness value in descending order.
     - The list is trimmed to contain a few best scoring shapes.
