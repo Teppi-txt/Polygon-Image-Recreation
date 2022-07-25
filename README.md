@@ -62,7 +62,7 @@ This project was made over the summer of 2022 to practice Java development.
 ## Optimizations
 
 ### Bounding Box Detection
-In **Step 3**, when assigning shapes a color:
+In **Step 2**, when assigning shapes a color:
 >  ...drawing the shape on a completely blank image, then loop through it's pixels to isolate ones without a null value and getting the corresponding pixels in the target image.
 
 This process wastes a large amount of runtime, as looping through all the pixels in the image can waste unneccesary resources if the shape is significantly smaller than the dimensions of the image. 
