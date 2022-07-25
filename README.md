@@ -48,7 +48,7 @@ This project was made over the summer of 2022 to practice Java development.
 2. Generates a large list of shapes (Ellipses, Rectangles, or Polygons) each containing a set of random parameters.  
     - Each shape contains geometry data, rotation, and whether to draw as filled or outlined.
     - A color is also assigned by averaging the pixels in the target image behind the shape.
-        - Done by drawing the shape on a completely blank image, then looping through it's pixels to isolate ones without a null value and getting the corresponding pixels in the target image.
+        - Done by drawing the shape on a completely blank image, then looping through its pixels to isolate ones without a null value and getting the corresponding pixels in the target image.
     
 3. The program iterates through the `HashMap`, drawing each shape on a copy of the current image and comparing it to the target using mean squared difference to store the "fitness" value in `<Shape, Double>` pairs.
     - Sorts the list based on the fitness value in descending order, and removes all low-scoring shapes.
@@ -63,7 +63,7 @@ This project was made over the summer of 2022 to practice Java development.
 
 ### Bounding Box Detection
 In **Step 2**, when assigning shapes a color:
->  ...drawing the shape on a completely blank image, then loop through it's pixels to isolate ones without a null value and getting the corresponding pixels in the target image.
+>  ...drawing the shape on a completely blank image, then loop through its pixels to isolate ones without a null value and getting the corresponding pixels in the target image.
 
 This process wastes a large amount of runtime, as looping through all the pixels in the image can waste unneccesary resources if the shape is significantly smaller than the dimensions of the image. 
 -   *This is seen much more prominently deep into a render, as when the current image resembles the target image more, the better shapes will be ones with small sizes, as they can provide more detail without messing up the progress already made.*
